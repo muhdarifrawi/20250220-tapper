@@ -1,0 +1,25 @@
+#player-1 {
+    background-color: blue;
+    height: 100vh;
+}
+
+#player-2 {
+    background-color: red;
+    height: 100vh;
+}
+
+@media screen and (max-width:579px) {
+    #player-1 {
+        background-color: blue;
+        height: 50vh;
+    }
+
+    #player-1-text {
+        transform: rotate(180deg);
+    }
+    
+    #player-2 {
+        background-color: red;
+        height: 50vh;
+    }
+}
