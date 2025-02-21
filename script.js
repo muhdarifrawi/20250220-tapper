@@ -29,6 +29,7 @@ let keysPressed = {};
 
 function handleTouch(event) {
     event.preventDefault();
+    console.log(event.touches)
     for (let touch of event.touches) {
         if (touch.clientX < window.innerWidth / 2) {
             tallyScore(1);
