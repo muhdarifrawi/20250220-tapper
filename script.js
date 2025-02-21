@@ -7,25 +7,6 @@ let player2zone = document.getElementById("player-2");
 let player1score = 0;
 let player2score = 0;
 let keysPressed = {}; 
-// function addTappers () {
-//     let player1 = document.getElementById("player-1");
-//     let player2 = document.getElementById("player-2");
-//     // let player1btn = document.getElementById("player-1");
-//     // let player2btn = document.getElementById("player-2");
-
-//     player1.addEventListener("click", () => {
-//         console.log("player 1!");
-//         tallyScore(1);
-//     });
-
-//     player2.addEventListener("click", () => {
-//         console.log("player 2!");
-//         tallyScore(2);
-//     });
-
-// }
-
-
 
 function handleTouch(event) {
     event.preventDefault();
@@ -43,7 +24,7 @@ function handleTouch(event) {
     }
 }
 
-
+document.addEventListener("touchstart", handleTouch);
 
 document.addEventListener("keydown", (event) => {
     if (keysPressed[event.key]) return; // Ignore if already held down
