@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     console.log("LOADED");
-    addTappers();
+    handleTouch(event);
 });
 let player1zone = document.getElementById("player-1");
 let player2zone = document.getElementById("player-2");
