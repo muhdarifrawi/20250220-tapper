@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function handleTouch(event) {
         // event.preventDefault();
         console.log(event.touches)
-        for (let touch of event.touches) {
+        for (let touch of event.touches || [event]) {
             if (touch.clientX < window.innerWidth / 2) {
                 tallyScore(1);
                 player1zone.style.backgroundColor = "#3ba1c5"; // Flash effect
