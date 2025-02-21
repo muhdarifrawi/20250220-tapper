@@ -3,9 +3,35 @@ let player2zone = document.getElementById("player-2");
 let player1score = 0;
 let player2score = 0;
 let keysPressed = {}; 
+let intialTime = 30;
+let timeLeft = intialTime;
+let timeSec = 0;
+let gameActive = true;
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log("LOADED");
+
+
+    function endGame() {
+        gameActive = false;
+        gameOverText.style.display = "block"; // Show "Game Over" text
+    }
+
+    
+
+    function startTimer() {
+        let timerInterval = setInterval(() => {
+            if (timeLeft > 0) {
+                timeLeft--;
+                // timerDisplay.textContent = `Time: ${timeLeft}`;
+                timeSec ++;
+                handleTimeBar ()
+            } else {
+                clearInterval(timerInterval);
+                endGame();
+            }
+        }, 1000);
+    }
 
     function handleTouch(event) {
         // event.preventDefault();
@@ -56,6 +82,16 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("player-2-score").innerText = player2score;
         }
     }
+
+    function handleTimeBar (){
+        console.log(timeSec, intialTime);
+        let barWidth = (timeLeft/intialTime) * 100;
+        console.log(barWidth.toString());
+        document.getElementById("progress-time").style.width = barWidth.toString() + "%";
+        console.log(document.getElementById("progress-time").style.width);
+    }
+
+    startTimer();
 });
 
 

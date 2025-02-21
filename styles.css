@@ -22,4 +22,8 @@
         height: 50vh;
         touch-action: none;
     }
+
+    .fixed-top {
+        top:50vh;
+    }
 }
