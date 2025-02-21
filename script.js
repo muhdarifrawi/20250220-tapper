@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // console.log(event.touches)
         for (let touch of event.touches || [event]) {
             if (window.innerWidth < 766) {
-                if (touch.clientY < window.innerHeight / 2) {
+                if (touch.clientY > window.innerHeight / 2) {
                     tallyScore(1);
                     player1zone.style.backgroundColor = "#3ba1c5"; // Flash effect
                     setTimeout(() => player1zone.style.backgroundColor = "#2596be", 100);
