@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // event.preventDefault();
         console.log(event.touches)
         for (let touch of event.touches || [event]) {
-            if (touch.clientX < window.innerWidth / 2) {
+            if (touch.clientX > window.innerWidth / 2) {
                 tallyScore(1);
                 player1zone.style.backgroundColor = "#3ba1c5"; // Flash effect
                 setTimeout(() => player1zone.style.backgroundColor = "#2596be", 100);
@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     
+    document.addEventListener("touchstart", handleTouch, { passive: false }); 
     document.addEventListener("pointerdown", handleTouch, { passive: true });
     
     document.addEventListener("keydown", (event) => {

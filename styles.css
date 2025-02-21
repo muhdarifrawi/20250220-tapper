@@ -11,6 +11,7 @@
 @media screen and (max-width:766px) {
     #player-1 {
         height: 50vh;
+        touch-action: none;
     }
 
     #player-2-text {
@@ -19,5 +20,6 @@
     
     #player-2 {
         height: 50vh;
+        touch-action: none;
     }
 }
