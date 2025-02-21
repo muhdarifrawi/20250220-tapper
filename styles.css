@@ -1,16 +1,15 @@
 #player-1 {
-    background-color: blue;
+    background-color: #2596be;
     height: 100vh;
 }
 
 #player-2 {
-    background-color: red;
+    background-color: #be2525;
     height: 100vh;
 }
 
 @media screen and (max-width:579px) {
     #player-1 {
-        background-color: blue;
         height: 50vh;
     }
 
@@ -19,7 +18,6 @@
     }
     
     #player-2 {
-        background-color: red;
         height: 50vh;
     }
 }
