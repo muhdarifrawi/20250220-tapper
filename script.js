@@ -1,5 +1,7 @@
 let player1zone = document.getElementById("player-1");
 let player2zone = document.getElementById("player-2");
+let player1outcomeText = document.getElementById("player-1-outcome-text");
+let player2outcomeText = document.getElementById("player-2-outcome-text");
 let timer = document.getElementById("timer");
 let startBtn = document.getElementById("start-btn");
 let player1score = 0;
@@ -16,10 +18,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     startBtn.addEventListener("click", startGame);
 
+    function handleWinner () {
+        if(player1score > player2score){
+            player1outcomeText.innerText = "Winner";
+        }
+        else if (player1score < player2score) {
+            player2outcomeText.innerText = "Winner";
+        }
+        else if (player1score == player2score) {
+            player1outcomeText.innerText = "Draw";
+            player2outcomeText.innerText = "Draw";
+        }
+    }
 
     function endGame() {
         gameActive = false;
         handleVisuals();
+        handleWinner();
         startBtn.innerText = "Play Again ?";
     }
 
@@ -27,7 +42,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if(timeLeft == 0){
             timeLeft = intialTime;
             countDown = 5;
+            handleTimeBar();
         }
+        player1outcomeText.innerHTML = "";
+        player2outcomeText.innerHTML = "";
+        player1score = 0;
+        player2score = 0;
         gameActive = true;
         document.getElementById("progress-group").classList.remove("d-none");
         startCountdown();
@@ -98,6 +118,8 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("start-msg").classList.add("d-none");
             document.getElementById("player-1-text").classList.remove("d-none");
             document.getElementById("player-2-text").classList.remove("d-none");
+            document.getElementById("player-1-score").innerText = 0;
+            document.getElementById("player-2-score").innerText = 0;
             handleControls();
         }
         else if (!gameActive) {
