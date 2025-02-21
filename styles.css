@@ -1,16 +1,32 @@
+#main {
+    height:100vh;
+}
+
+#player-control {
+    height:100%;
+}
+
 #player-1 {
     background-color: #2596be;
-    height: 100vh;
+    height: 100%;
 }
 
 #player-2 {
     background-color: #be2525;
-    height: 100vh;
+    height: 100%;
 }
+
+/* #start-msg {
+    display: none;
+}
+
+#end-msg {
+    display:none;
+} */
 
 @media screen and (max-width:766px) {
     #player-1 {
-        height: 50vh;
+        height: 50%;
         touch-action: none;
     }
 
@@ -19,11 +35,11 @@
     }
     
     #player-2 {
-        height: 50vh;
+        height: 50%;
         touch-action: none;
     }
 
     .fixed-top {
-        top:50vh;
+        top:50%;
     }
 }
