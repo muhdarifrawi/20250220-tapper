@@ -33,6 +33,10 @@
     #player-2-text {
         transform: rotate(180deg);
     }
+
+    #player-2-outcome-text {
+        transform: rotate(180deg);
+    }
     
     #player-2 {
         height: 50%;
