@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("LOADED");
 
     function handleTouch(event) {
-        event.preventDefault();
+        // event.preventDefault();
         console.log(event.touches)
         for (let touch of event.touches) {
             if (touch.clientX < window.innerWidth / 2) {
